@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Cliente e Produto</title>
+  <link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg?v=2" />
+  <link rel="shortcut icon" href="favicon.svg?v=2" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Cadastro Web</h1>
+      <p>Cadastre clientes e produtos de forma rápida.</p>
+    </header>
+
+    <section class="card">
+      <h2>Cliente</h2>
+      <label>
+        Buscar cliente por nome ou CPF
+        <input type="text" id="busca-cliente" placeholder="Digite nome ou CPF" />
+      </label>
+      <form id="cliente-form" class="form-grid">
+        <label>
+          CPF
+          <input type="text" id="cliente-cpf" required placeholder="Ex.: 123.456.789-00" />
+        </label>
+        <label>
+          RG
+          <input type="text" id="cliente-rg" required placeholder="Ex.: 12.345.678-9" />
+        </label>
+        <label>
+          Nome
+          <input type="text" id="cliente-nome" required placeholder="Ex.: Ana Silva" />
+        </label>
+        <label>
+          Endereço
+          <input type="text" id="cliente-endereco" required placeholder="Ex.: Rua das Flores, 123" />
+        </label>
+        <label>
+          Data de nascimento
+          <input type="date" id="cliente-data-nascimento" required />
+        </label>
+        <button type="submit">Cadastrar Cliente</button>
+      </form>
+      <ul id="lista-clientes" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Produto</h2>
+      <label>
+        Buscar produto por código ou descrição
+        <input type="text" id="busca-produto" placeholder="Digite código ou descrição" />
+      </label>
+      <form id="produto-form" class="form-grid">
+        <label>
+          Código
+          <input type="text" id="produto-codigo" required placeholder="Ex.: P-1001" />
+        </label>
+        <label>
+          Descrição
+          <input type="text" id="produto-descricao" required placeholder="Ex.: Teclado Mecânico RGB" />
+        </label>
+        <label>
+          Valor unitário (R$)
+          <input type="number" id="produto-valor-unitario" required min="0" step="0.01" placeholder="199.90" />
+        </label>
+        <label>
+          Quantidade em estoque
+          <input type="number" id="produto-quantidade-estoque" required min="0" step="1" placeholder="20" />
+        </label>
+        <button type="submit">Cadastrar Produto</button>
+      </form>
+      <ul id="lista-produtos" class="list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
